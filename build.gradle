@@ -24,12 +24,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+    // thymeleaf-layout
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
     // spring mail
-	  // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
-	  implementation 'org.springframework.boot:spring-boot-starter-mail:2.7.1'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:2.7.1'
 
     //runtimeOnly 'com.mysql:mysql-connector-j'
-
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'

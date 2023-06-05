@@ -21,13 +21,16 @@ public class BookEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "book_id")
+	// 가계부 식별자
 	private Long bookId;
 	
 	@ManyToOne
     @JoinColumn(name = "user_id")
+	// 회원 식별자
     private UserEntity user;
 	
-	//@Column(nullable = false)
+	@Column(nullable = false)
+	// 이번 달 예산
 	private int budget;
 
 	@Column(name = "cost_type", length = 2)
@@ -35,22 +38,25 @@ public class BookEntity {
 
 	// 수입-> in
 	// 고정지출 -> fc
-	// 변동지출 ->
+	// 변동지출 -> vc
 
 	//private int income;
 	//private int fixedCost;
 	//private int variableCost;
 
+	//남은예산
 	private int balance;
+	//사용금액
 	private int cost;
 	
-	//@Column(length = 4, nullable = false)
+	@Column(length = 4)
 	private String year;
 	
-	//@Column(length = 2, nullable = false)
+	@Column(length = 2)
 	private String month;
 	
-	//@Column(length = 4000, nullable = false)
+	@Column(length = 4000, nullable = false)
+	//사용내역
 	private String content;
 	
 	private String memo;

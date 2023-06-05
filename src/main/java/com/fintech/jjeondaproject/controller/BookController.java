@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/books")
 @Controller
 public class BookController {
-
+    //스프링 부트가 미리 생성해 놓은 객체를 가져다가 자동으로 연결해줌
     private final BookService bookService;
 
     @GetMapping("/detail")
@@ -23,8 +23,10 @@ public class BookController {
     }
 
     @PostMapping("/details")
-    public String createBook(BookReqDto dto) {
-        bookService.createBook(dto);
+    //DTO로 데이터 받아옴
+    public String createBook(BookReqDto bookDto) {
+
+        bookService.createBook(bookDto);
 
         return "redirect:/";
     }
