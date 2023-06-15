@@ -10,7 +10,7 @@ import com.fintech.jjeondaproject.dto.user.TokenResponseDto;
 @FeignClient(name= "naver", url = "https://nid.naver.com/oauth2.0/")
 public interface LoginFeign {
 	
-	// api를 호출할 메소드 세팅(인가코드받기)
+	// api를 호출할 메소드 세팅(인가코드받기) 3.4.4 접근 토큰 발급 요청
 	@GetMapping(value = "/token", consumes = "application/x-www-form-urlencoded", produces = "application/json")
 	NaverResponseDto login(@RequestParam("grant_type") String grant_type,
 							@RequestParam("client_id") String client_id,
